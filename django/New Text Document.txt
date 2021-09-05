@@ -1,0 +1,47 @@
+#############################
+# Setting Up Your Environment
+# create django folder
+# create django3 vnev using below command project-name is django3
+py -m venv project-name
+# to get into environment
+project-name\Scripts\activate.bat
+# install django
+py -m pip install django
+
+######################################
+# Installing the Sample Code for DJ4E
+#
+git clone https://github.com/csev/dj4e-samples
+cd dj4e-samples
+pip install -r requirements.txt
+python manage.py check
+#############################
+# When running 'check' works
+#
+python manage.py makemigrations
+#
+python manage.py migrate
+
+###################################################### 
+cd .. i.e.; go back to django folder in command prompt
+######################################################
+
+mkdir django_projects
+cd django_projects
+django-admin startproject mysite
+
+##################################
+## Editing Files on PythonAnywhere
+# /django_projects/mysite/mysite/settings.py
+
+ALLOWED_HOSTS = [ '*' ]
+
+
+###################################################### 
+go to /django_projects/mysite folder in command prompt
+######################################################
+
+python manage.py startapp polls 
+
+# from above command the tutorial is from 
+# https://docs.djangoproject.com/en/3.0/intro/tutorial01/#creating-the-polls-app

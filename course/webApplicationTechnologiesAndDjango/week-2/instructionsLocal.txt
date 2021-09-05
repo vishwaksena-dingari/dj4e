@@ -1,0 +1,7 @@
+...\> django-admin startproject mysite
+
+...\> python manage.py migrate
+
+...\> py manage.py runserver
+
+...\> py manage.py startapp polls

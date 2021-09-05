@@ -1,0 +1,56 @@
+### YOu can Always visit dj4e site and goto assignments tab
+
+## Setting Up Your Environment
+
+# Here django3 is virtual environment name and python3.8 is version of python
+mkvirtualenv django3 --python=/usr/bin/python3.8
+
+# insatlling django in virtual environment
+pip install django
+
+# To get into virtual environment (only needed if not in virtual environment)
+workon django3
+
+# getting django version
+python -m django --version
+
+
+## Installing the Sample Code for DJ4E
+
+# ~ means to root directory (bash command line) | python manage.py check must be done before hosting (in pythonanywhere)
+cd ~
+git clone https://github.com/csev/dj4e-samples
+cd dj4e-samples
+pip install -r requirements.txt
+python manage.py check
+
+
+## When running 'check' works
+
+#
+python manage.py makemigrations
+
+#
+python manage.py migrate
+
+
+## Building Your Application
+
+# django-admin startproject mysite creates a project with name mysite
+cd ~
+mkdir django_projects
+cd django_projects
+django-admin startproject mysite
+
+# You need to edit the file ~/django_projects/mysite/mysite/settings.py and change the allowed hosts line (around line 28) to be:
+ALLOWED_HOSTS = [ '*' ]
+
+
+## Adding Your Polls Application
+
+# 
+cd ~/django_projects/mysite
+python manage.py startapp polls
+
+python manage.py runserver     # <-- Never run this on pythonanywhere instead do the below command
+python manage.py check
